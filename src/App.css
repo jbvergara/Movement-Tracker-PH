@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+  
+}
+
+#timeSlider {
+  width: 400px;
+}
+
+#infoDiv {
+  height: 200px;
+  padding: 10px;
+  width: 280px;
+}
+
+#infoDiv span {
+  color: #F9C653;
+  font-size: 12pt;
+  font-weight: bolder;
+}
+
+.bgcontainer {
+  background-image: url("bg-image.jpg");
+  background-size: cover;
+}
+
+.App-header {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .05em solid black;
+  border-opacity: 50%;
+  white-space: nowrap; /* Keeps the content on a single line */
+  padding: 0% 1% 1% 0%;
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .025em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(40, end),
+    blink-caret 1s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0 
+  }
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
+
+.loginform {
+  animation: 1s ease-out 0s 1 slideBottomtoTop;
+}
+
+@keyframes slideBottomtoTop {
+  0% {
+      transform: translateY(100%);
+  }
+  100% {
+      transform: translateY(0%);
+  }
+}
