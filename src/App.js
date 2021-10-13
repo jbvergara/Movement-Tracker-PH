@@ -39,8 +39,8 @@ const AuthInstance = getAuth(app);
 //ARCGIS AUTH INIT
 let token;
 const session = new ApplicationSession({
-  clientId: process.env.REACT_APP_CLIENT_ID,
-  clientSecret: process.env.REACT_APP_CLIENT_SECRET
+  clientId: process.env.REACT_APP_ARCGIS_CLIENT_ID,
+  clientSecret: process.env.REACT_APP_ARCGIS_CLIENT_SECRET
 });
 session.getToken("https://www.arcgis.com/sharing/rest/oauth2/token").then(value => token = value);
 
@@ -149,7 +149,7 @@ export default function App() {
         let layerView;
 
         //API CONFIG
-        esriConfig.apiKey = process.env.REACT_APP_API_KEY;
+        esriConfig.apiKey = process.env.REACT_APP_ARCGIS_API_KEY;
         
         //CONFIGURE INTERCEPT
         esriConfig.request.interceptors.push({
