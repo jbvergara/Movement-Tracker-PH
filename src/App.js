@@ -1,6 +1,6 @@
+//Source Files
 import logo from './logo.png';
 import './App.css';
-import { ARCGIS_APP_API_KEY, ARCGIS_APP_TOKEN } from './esriAuth.js';
 
 //REACT MODULES
 import { useState } from 'react';
@@ -18,9 +18,9 @@ import { getAuth,
   createUserWithEmailAndPassword } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-//ESRI INIT
+//ESRI/ARCGIS MODULES
 import { loadModules } from 'esri-loader';
-
+import { ApplicationSession } from '@esri/arcgis-rest-auth';
 
 //FIREBASE INIT
 const firebaseConfig = {
@@ -35,6 +35,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const AuthInstance = getAuth(app);
 
+
+//ARCGIS AUTH INIT
+let token;
+const session = new ApplicationSession({
+  clientId: process.env.REACT_APP_CLIENT_ID,
+  clientSecret: process.env.REACT_APP_CLIENT_SECRET
+});
+session.getToken("https://www.arcgis.com/sharing/rest/oauth2/token").then(value => token = value);
+
+//ERROR DICT
+const errorDict = {
+  "auth/invalid-email": "Invalid Email/Password",
+  "auth/wrong-password": "Invalid Email/Password",
+  "auth/email-already-in-use": "User already exists",
+  "auth/weak-password": "Password must be at least 8 characters"
+}
+
 export default function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -44,13 +61,7 @@ export default function App() {
   const [createEmail, setCreateEmail] = useState('');
   const [createPassword, setCreatePassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
-  const errorDict = {
-    "auth/invalid-email": "Invalid Email/Password",
-    "auth/wrong-password": "Invalid Email/Password",
-    "auth/email-already-in-use": "User already exists",
-    "auth/weak-password": "Password must be at least 8 characters"
-  }
-
+  
   const signIn = async () => {
     if (!email.length || !password.length) return
     var status = await AuthCheck(email, password); 
@@ -136,8 +147,9 @@ export default function App() {
         TimeExtent
       ]) => {
         let layerView;
+
         //API CONFIG
-        esriConfig.apiKey = ARCGIS_APP_API_KEY;
+        esriConfig.apiKey = process.env.REACT_APP_API_KEY;
         
         //CONFIGURE INTERCEPT
         esriConfig.request.interceptors.push({
@@ -148,18 +160,10 @@ export default function App() {
           // use the BeforeInterceptorCallback to add token to query
           before: function setToken(params) {
             params.requestOptions.query = params.requestOptions.query || {};
-            params.requestOptions.query.token = ARCGIS_APP_TOKEN;
+            params.requestOptions.query.token = token;
           }
         });
-      
-        //LAYER INIT
-        /*
-        const base_layer = new FeatureLayer({
-          url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/PHL_Boundaries_2020/FeatureServer/3",
-          apiKey: ARCGIS_APP_API_KEY
-        });
-        */
-
+    
         const time_info = new TimeInfo({
             startField: "time",
             interval: {
@@ -167,66 +171,30 @@ export default function App() {
               value: 1
             }
         });
-        
     
-        let renderer = new ClassBreaksRenderer({
+        const renderer = new ClassBreaksRenderer({
           field: "all_day_ratio_single_tile_users",
           legendOptions: {
-            title: "% of population that did not leave their city/municipality"
+            title: "Proportion of population that did not leave their city/municipality"
           },
         });
 
-        
-        renderer.addClassBreakInfo({
-          minValue: 0,
-          maxValue: 0.22,
-          symbol: {
-            type: "simple-marker",  // autocasts as new PointSymbol3D()
-            color: "#a63603",
-            size: 10
-          }
-        });
-
-        renderer.addClassBreakInfo({
-          minValue: 0.23,
-          maxValue: 0.29,
-          symbol: {
-            type: "simple-marker",  // autocasts as new PointSymbol3D()
-            color: "#e6550d",
-            size: 10
-          }
-        });
-
-        renderer.addClassBreakInfo({
-          minValue: 0.30,
-          maxValue: 0.37,
-          symbol: {
-            type: "simple-marker",  // autocasts as new PointSymbol3D()
-            color: "#fd8d3c",
-            size: 10
-
-          }
-        });
-
-        renderer.addClassBreakInfo({
-          minValue: 0.38,
-          maxValue: 0.44,
-          symbol: {
-            type: "simple-marker",  // autocasts as new PointSymbol3D()
-            color: "#fdbe85",
-            size: 10
-          }
-        });
-
-        renderer.addClassBreakInfo({
-          minValue: 0.45,
-          maxValue: 0.80,
-          symbol: {
-            type: "simple-marker",  // autocasts as new PointSymbol3D()
-            color: "#feedde",
-            size: 10
-          }
-        });
+        function renderConfig (min, max, color) {
+          return ({
+            minValue: min,
+            maxValue: max,
+            symbol: {
+              type: 'simple-marker',  
+              color: color,
+              size: 10
+            }
+          })
+        }
+        renderer.addClassBreakInfo(renderConfig(0, 0.22, "#a63603"));
+        renderer.addClassBreakInfo(renderConfig(0.23, 0.29, "#e6550d"));
+        renderer.addClassBreakInfo(renderConfig(0.30, 0.37, "#fd8d3c"));
+        renderer.addClassBreakInfo(renderConfig(0.38, 0.44, "#fdbe85"));
+        renderer.addClassBreakInfo(renderConfig(0.45, 0.80, "#feedde"));
 
         const popup_template = new PopupTemplate({
           title: "Data Information",
@@ -256,7 +224,7 @@ export default function App() {
 
         const data_layer = new FeatureLayer({
           url: "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/final_data/FeatureServer/0",
-          apiKey: ARCGIS_APP_API_KEY,
+          apiKey: process.env.REACT_APP_ARCGIS_APP_API_KEY,
           tilte: "PH Movement Data",
           outFields: ["all_day_ratio_single_tile_users", "time"],
           timeInfo: time_info,
@@ -269,15 +237,14 @@ export default function App() {
         const map = new Map({
           basemap: "dark-gray-vector",
           layers: [data_layer]
-        });    
-        //map.add(base_layer);
+        });
 
         //MAPVIEW INIT
         const view = new MapView({
           map: map,
           center: [121.7740, 12.8797], // Longitude, latitude
-          zoom: 6, // Zoom level
-          container: "viewDiv" // Div element
+          zoom: 4, // Zoom level
+          container: "viewDiv" // Div element 
         });
 
         const timeSlider = new TimeSlider({
@@ -294,55 +261,35 @@ export default function App() {
         view.whenLayerView(data_layer).then((lv) => {
           layerView = lv;
 
-          // start time of the time slider - 5/25/2019
-          const start = new Date(2021, 0, 0);
-          // set time slider's full extent to
-          // 5/25/5019 - until end date of layer's fullTimeExtent
+          const start = new Date(2021, 0, 1); // start time of the time slider - 1/1/2021
+          // set time slider's full extent to 9/27/2021 - until end date of layer's fullTimeExtent
           timeSlider.fullTimeExtent = {
             start: start,
             end: data_layer.timeInfo.fullTimeExtent.end
           };
 
-          // We will be showing earthquakes with one day interval
-          // when the app is loaded we will show earthquakes that
-          // happened between 5/25 - 5/26.
-          let end = new Date(start);
-          // end of current time extent for time slider
-          // showing earthquakes with one day interval
-          end.setDate(end.getDate() + 1);
-
-          // timeExtent property is set so that timeslider
-          // widget show the first day. We are setting
-          // the thumbs positions.
-          //timeSlider.timeExtent = {start, end};
+          let end = new Date(start); // happened between 1/1 - 1/2.
+          
+          end.setDate(end.getDate() + 1); // end of current time extent for time slider
         });
 
         timeSlider.watch("timeExtent", () => {
-          // only show earthquakes happened up until the end of
-          // timeSlider's current time extent.
+          //filter later to show data less than the end of time slider
           data_layer.definitionExpression =
             "time <= " + timeSlider.timeExtent.end.getTime();
 
-            const extent_time = new TimeExtent({
-              start: timeSlider.timeExtent.end.getTime(),
-              end: timeSlider.timeExtent.end.getTime()
-            });
-          
-
-          // now gray out earthquakes that happened before the time slider's current
-          // timeExtent... leaving footprint of earthquakes that already happened
+          // now gray out data that happened before the time slider's current
           layerView.effect = {
               filter: {
-                timeExtent: extent_time,
+                timeExtent: timeSlider.timeExtent,
                 geometry: view.extent
               },
               excludedEffect: "grayscale(1%)",
               includedEffect: "opacity(100%)"
             };
           
-          
           const statQuery = layerView.effect.filter.createQuery();
-          statQuery.outStatistics = [avgCompliance];
+          statQuery.outStatistics = [avgCompliance, maxCompliance];
 
           data_layer.queryFeatures(statQuery).then((result) => {
             let htmls = [];
@@ -358,8 +305,8 @@ export default function App() {
                     const html =
                       "<br/>" +
                       statsFields[name] +
-                      ": <b><span>" +
-                      attributes[name].toFixed(2) +
+                      " <b><span>" +
+                      attributes[name].toFixed(2) + 
                       "</span></b>";
                     htmls.push(html);
                   }
@@ -376,7 +323,7 @@ export default function App() {
                   statsDiv.innerHTML = yearHtml;
                 } else {
                   statsDiv.innerHTML =
-                    yearHtml + htmls[0]
+                    yearHtml + htmls[0] + htmls[1]
                 }
               }
             }
@@ -386,16 +333,21 @@ export default function App() {
           });
         });
 
-        
-
         const avgCompliance = {
           onStatisticField: "all_day_ratio_single_tile_users",
           outStatisticFieldName: "avg_compliance",
           statisticType: "avg"
         };
 
+        const maxCompliance = {
+          onStatisticField: "all_day_ratio_single_tile_users",
+          outStatisticFieldName: "max_compliance",
+          statisticType: "max"
+        };
+
         const statsFields = {
-          avg_compliance: "Average proportion of population that did not leave the city/municipality"
+          avg_compliance: "Average:",
+          max_compliance: "Maximum:"
         };
 
 
@@ -407,7 +359,7 @@ export default function App() {
           content: new Legend({
             view: view
           }),
-          expanded: false
+          expanded: true
         });
         view.ui.add(legendExpand, "top-right");
 
@@ -419,7 +371,7 @@ export default function App() {
           expandTooltip: "Expand Data info",
           view: view,
           content: infoDiv,
-          expanded: true
+          expanded: false
         });
         view.ui.add(infoDivExpand, "top-right");
 
@@ -429,9 +381,9 @@ export default function App() {
     });
     return(
       <div className="bg-gray-200 font-sans leading-normal tracking-normal flex flex-col">
-        <nav id="header" className="fixed w-full">
-          <div className="relative w-full z-10 top-0 bg-red-900">
-            <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+        <nav id="header" className="w-full">
+          <div className="relative w-full top-0 bg-red-900">
+            <div className="w-auto px-0 mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
               <Link to="/">
                 <MainHeaderLogo />
               </Link>
@@ -750,7 +702,7 @@ const LoadingScreen = () => {
 
 const MainHeaderLogo = () => {
   return (
-    <div className="pl-4 flex items-center">
+    <div className="pl-3 flex items-center">
         <svg className="h-5 pr-3 fill-white text-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
           <path d="M17.94 11H13V9h4.94A8 8 0 0 0 11 2.06V7H9V2.06A8 8 0 0 0 2.06 9H7v2H2.06A8 8 0 0 0 9 17.94V13h2v4.94A8 8 0 0 0 17.94 11zM10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/>
         </svg>
