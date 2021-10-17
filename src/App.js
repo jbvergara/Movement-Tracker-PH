@@ -175,7 +175,7 @@ export default function App() {
         const renderer = new ClassBreaksRenderer({
           field: "all_day_ratio_single_tile_users",
           legendOptions: {
-            title: "Proportion of population that did not leave their city/municipality"
+            title: "Proportion of users that stayed within their city/municipality"
           },
         });
 
