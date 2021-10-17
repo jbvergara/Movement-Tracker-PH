@@ -105,6 +105,6 @@ def clean_data(filename):
 
 
 if __name__ == '__main__':
-    filter_raw_data('raw_data.txt')
+    #filter_raw_data('raw_data.txt')
     merge_longlat('raw_data_filtered.csv')
     clean_data('merged_data.csv')
