@@ -156,7 +156,7 @@ export default function App() {
           // set the `urls` property to the URL of the FeatureLayer so that this
           // interceptor only applies to requests made to the FeatureLayer URL
           urls: ["https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/PHL_Boundaries_2020/FeatureServer/3",
-          "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/final_data/FeatureServer/0"],
+          "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/mv_ph10152021/FeatureServer/0"],
           // use the BeforeInterceptorCallback to add token to query
           before: function setToken(params) {
             params.requestOptions.query = params.requestOptions.query || {};
@@ -165,7 +165,7 @@ export default function App() {
         });
     
         const time_info = new TimeInfo({
-            startField: "time",
+            startField: "epoch",
             interval: {
               unit: "days",
               value: 1
@@ -191,10 +191,10 @@ export default function App() {
           })
         }
         renderer.addClassBreakInfo(renderConfig(0, 0.22, "#a63603"));
-        renderer.addClassBreakInfo(renderConfig(0.23, 0.29, "#e6550d"));
-        renderer.addClassBreakInfo(renderConfig(0.30, 0.37, "#fd8d3c"));
-        renderer.addClassBreakInfo(renderConfig(0.38, 0.44, "#fdbe85"));
-        renderer.addClassBreakInfo(renderConfig(0.45, 0.80, "#feedde"));
+        renderer.addClassBreakInfo(renderConfig(0.22, 0.29, "#e6550d"));
+        renderer.addClassBreakInfo(renderConfig(0.29, 0.37, "#fd8d3c"));
+        renderer.addClassBreakInfo(renderConfig(0.37, 0.44, "#fdbe85"));
+        renderer.addClassBreakInfo(renderConfig(0.44, 0.80, "#feedde"));
 
         const popup_template = new PopupTemplate({
           title: "Data Information",
@@ -208,13 +208,13 @@ export default function App() {
                   visible: true
                 },
                 {
-                  fieldName: "all_day_ratio_single_tile_users",
-                  label: "Proportion of population that stayed within the city/municipality",
+                  fieldName: "ds",
+                  label: "Date",
                   visible: true
                 },
                 {
-                  fieldName: "date",
-                  label: "Date",
+                  fieldName: "all_day_ratio_single_tile_users",
+                  label: "Proportion of users that stayed within the city/municipality",
                   visible: true
                 }
               ]
@@ -223,10 +223,10 @@ export default function App() {
         });
 
         const data_layer = new FeatureLayer({
-          url: "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/final_data/FeatureServer/0",
+          url: "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/mv_ph10152021/FeatureServer/0",
           apiKey: process.env.REACT_APP_ARCGIS_APP_API_KEY,
-          tilte: "PH Movement Data",
-          outFields: ["all_day_ratio_single_tile_users", "time"],
+          title: "PH Movement Data",
+          outFields: ["all_day_ratio_single_tile_users", "epoch"],
           timeInfo: time_info,
           renderer: renderer,
           geometryType: "point",
@@ -249,6 +249,7 @@ export default function App() {
 
         const timeSlider = new TimeSlider({
           playRate: 1000,
+          mode: "instant",
           stops: {
             interval: {
               value: 1,
@@ -267,16 +268,13 @@ export default function App() {
             start: start,
             end: data_layer.timeInfo.fullTimeExtent.end
           };
-
-          let end = new Date(start); // happened between 1/1 - 1/2.
-          
-          end.setDate(end.getDate() + 1); // end of current time extent for time slider
         });
 
         timeSlider.watch("timeExtent", () => {
           //filter later to show data less than the end of time slider
           data_layer.definitionExpression =
-            "time <= " + timeSlider.timeExtent.end.getTime();
+                "epoch BETWEEN " +  (timeSlider.timeExtent.start.getTime() + 28800000) + " AND " + (timeSlider.timeExtent.start.getTime() + 28800000 + 86400000);
+              //"epoch = " +  (timeSlider.timeExtent.start.getTime() + 28800000);
 
           // now gray out data that happened before the time slider's current
           layerView.effect = {
@@ -287,69 +285,7 @@ export default function App() {
               excludedEffect: "grayscale(1%)",
               includedEffect: "opacity(100%)"
             };
-          
-          const statQuery = layerView.effect.filter.createQuery();
-          statQuery.outStatistics = [avgCompliance, maxCompliance];
-
-          data_layer.queryFeatures(statQuery).then((result) => {
-            let htmls = [];
-            statsDiv.innerHTML = "";
-            if (result.error) {
-              return result.error;
-            } else {
-              if (result.features.length >= 1) {
-                const attributes = result.features[0].attributes;
-                var name;
-                for (name in statsFields) {
-                  if (attributes[name] && attributes[name] != null) {
-                    const html =
-                      "<br/>" +
-                      statsFields[name] +
-                      " <b><span>" +
-                      attributes[name].toFixed(2) + 
-                      "</span></b>";
-                    htmls.push(html);
-                  }
-                }
-                const yearHtml =
-                  "<span>" +
-                  "</span> Data recorded between " +
-                  timeSlider.timeExtent.start.toLocaleDateString() +
-                  " - " +
-                  timeSlider.timeExtent.end.toLocaleDateString() +
-                  ".<br/>";
-
-                if (htmls[0] === undefined) {
-                  statsDiv.innerHTML = yearHtml;
-                } else {
-                  statsDiv.innerHTML =
-                    yearHtml + htmls[0] + htmls[1]
-                }
-              }
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
         });
-
-        const avgCompliance = {
-          onStatisticField: "all_day_ratio_single_tile_users",
-          outStatisticFieldName: "avg_compliance",
-          statisticType: "avg"
-        };
-
-        const maxCompliance = {
-          onStatisticField: "all_day_ratio_single_tile_users",
-          outStatisticFieldName: "max_compliance",
-          statisticType: "max"
-        };
-
-        const statsFields = {
-          avg_compliance: "Average:",
-          max_compliance: "Maximum:"
-        };
-
 
         const legendExpand = new Expand({
           collapsedIconClass: "esri-icon-collapse",
@@ -363,17 +299,7 @@ export default function App() {
         });
         view.ui.add(legendExpand, "top-right");
 
-        const statsDiv = document.getElementById("statsDiv");
-        const infoDiv = document.getElementById("infoDiv");
-        const infoDivExpand = new Expand({
-          collapsedIconClass: "esri-icon-collapse",
-          expandIconClass: "esri-icon-expand",
-          expandTooltip: "Expand Data info",
-          view: view,
-          content: infoDiv,
-          expanded: false
-        });
-        view.ui.add(infoDivExpand, "top-right");
+       
 
       }).catch(function(error) {
         console.log("Error:", error);
@@ -416,7 +342,6 @@ export default function App() {
           <div id="timeSlider"></div>
           <div id="infoDiv" className="esri-widget">
             <div> <b>Movement Data Philippines</b></div><br/>
-            <div id="statsDiv" className="esri-widget"></div>
           </div>
         </nav>
       </div>
