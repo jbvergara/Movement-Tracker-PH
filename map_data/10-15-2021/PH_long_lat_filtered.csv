@@ -617,7 +617,7 @@ Vigan,17.63881,121.38775
 Vigan,17.57472,120.38694
 Vigan,11.28167,125.54889
 Vigan Mindoro Airport,17.55671,120.35632
-City of Vigan,17.56275,120.39071
+Vigan City,17.56275,120.39071
 Viga Kapinyahan,10.38333,123.63333
 Bigaan,13.8327,122.9872
 Biga,17.39982,121.73765
@@ -643,7 +643,7 @@ Victorias River,10.90634,123.0668
 Victoria,12.49038,122.06067
 Victorias,10.90154,123.0705
 Victorias,10.9,122.71667
-City of Victorias,10.83333,123.13333
+Victorias City,10.83333,123.13333
 Victoria Range,9.4106,118.3257
 Victoria Peaks,9.3836,118.3143
 Victoria Gorge,12.8306,121.1087
@@ -753,7 +753,7 @@ Valencia,8.22306,126.43583
 NIA Valencia,7.90639,125.09417
 Valencia,9.66441,124.21846
 Valencia (Luzurriaga),9.25,123.18333
-City of Valencia,7.95,125
+Valencia City,7.95,125
 Valdez,16.08333,120.86667
 Valdez,14.99134,120.53759
 Valdez,10.79604,123.5447
@@ -833,7 +833,7 @@ Urdaneta,14.1781,120.7426
 Urdaneta Harbor,12.55,124.35
 Urdaneta,15.97611,120.57111
 Urdaneta,12.5367,124.3558
-City of Urdaneta,15.97944,120.59101
+Urdaneta City,15.97944,120.59101
 Urbiztondo,15.8227,120.3295
 Urbistondo,9.54833,125.77917
 Urbiztondo,15.81667,120.35
@@ -3272,7 +3272,7 @@ Tayabas Bay,13.62697,121.71513
 Tayabasan River,14.7157,121.2327
 Mount Tayabasan,14.7112,121.2326
 Tayabas,14.0259,121.5929
-City of Tayabas,14.05,121.61667
+Tayabas City,14.05,121.61667
 Tayabanon River,9.41667,122.71667
 Mount Toyaba,11.217,122.6961
 Tawog Point,12.77528,124.14833
@@ -3422,7 +3422,6 @@ Tarlac River,15.75789,120.45209
 Tarlac Reef,14.37056,122.01333
 Province of Tarlac,15.5,120.5
 Tarlac City,15.48017,120.59794
-City of Tarlac,15.48562,120.61616
 Tarkin Creek,7.16667,124.3
 Tariwara,14.05,124.2
 Taritip Point,7.9149,116.9336
@@ -3696,7 +3695,7 @@ Tankigan,9.8677,124.5021
 Tingkelan,7.07389,125.42528
 Tanjay River,9.532,123.1597
 Tanjay,9.5162,123.158
-City of Tanjay,9.53333,123.05
+Tanjay City,9.53333,123.05
 Taniongbobog,8.73333,117.76667
 Taningalang Creek,7.65,123.16667
 Tanidtiba,7.07556,124.66972
@@ -3908,7 +3907,7 @@ Tandag River,9.07778,126.19167
 Tandag Point,9.08333,126.2
 Tandag,9.07833,126.19861
 Tandag Airport,9.07242,126.17059
-City of Tandag,9.08333,126.08333
+Tandag City,9.08333,126.08333
 Tandaay,13.3924,123.296
 Tancolaiuan Island,5.2987,120.4755
 Point Tanchi-Payukan,6.07861,121.15167
@@ -3947,7 +3946,7 @@ Mount Tanauan,9.9027,123.9642
 Tanauan,14.08627,121.14975
 Tanauan,13.9648,121.9963
 Tanauan,11.10944,125.01556
-City of Tanauan,14.10127,121.10042
+Tanauan City,14.10127,121.10042
 Tanauan,11.11667,125
 Tanaual,14.18306,121.46
 Tana Point,5.12028,119.99
@@ -4491,8 +4490,7 @@ Talisay,6.11843,121.82619
 Talisay,4.86265,119.45048
 Talisay,14.13333,122.9
 Talisay,14.11092,121.01977
-City of Talisay,10.7,123.08333
-City of Talisay,10.3,123.81667
+Talisay City,10.3,123.81667
 Talisawa,6.77889,124.47472
 Talisain River,14.85589,120.08413
 Talisain Bay,14.85269,120.07953
@@ -4862,7 +4860,7 @@ Taguma,7.94444,126.06806
 Tagum,13.4496,122.1025
 Tagum Norte,10.07454,124.38925
 Magugpo Poblacion,7.4475,125.8046
-City of Tagum,7.4,125.83333
+Tagum City,7.4,125.83333
 Taguloy,6.43028,125.56333
 Tagulod,15.1951,120.92346
 Tagulbo River,8.98333,125.63333
@@ -4900,7 +4898,7 @@ Taguilas,12.40342,122.68583
 Taguilid,12.8257,123.2845
 Taguihon,9.62966,123.8941
 Taguig,14.5243,121.0792
-City of Taguig,14.53333,121.06667
+Taguig City,14.53333,121.06667
 Taguictic Bay,12.4411,123.3298
 Taguictic,12.4194,123.3399
 Taguibu,8.93333,125.53333
@@ -5270,7 +5268,7 @@ Tacut Reef,11.56667,123.3
 Tacutboata Reef,5.1519,120.4087
 Tacu Shoal,12.35,123.66667
 Tacurong,6.6925,124.67639
-City of Tacurong,6.69133,124.673
+Tacurong City,6.69133,124.673
 Tacupan,7.15139,124.81583
 Takipan,7.0925,124.64028
 Tacunan,7.10917,125.50389
@@ -5394,7 +5392,7 @@ Tabu Kalang,5.71667,120.88333
 Tabuk,17.47378,121.46799
 Tabuk,10.95,125
 Tabuk,8.18333,124.08333
-City of Tabuk,17.41667,121.4
+Tabuk City,17.41667,121.4
 Tabugon Island,11.5347,123.1967
 Tabugon Chico Islet,11.5431,123.1933
 Tabogon,14.07536,122.37335
@@ -5704,7 +5702,7 @@ Tabadyang,10.51676,123.1532
 Tabac Rock,11.0048,120.6368
 Tabaco Bay,13.329,123.8072
 Tabaco,13.35861,123.73361
-City of Tabaco,13.33333,123.71667
+Tabaco City,13.33333,123.71667
 Taba Bay,7.54861,122.81139
 Taba-Ao,16.6032,120.6291
 Taba-ao,11.62,122.3173
@@ -6339,7 +6337,7 @@ Sorsogon,12.97389,123.99333
 Sorsogon,12.0339,124.6739
 Sorsogon,9.65,123.33333
 Sorsogon,13,124.01667
-City of Sorsogon,12.98333,123.98333
+Sorsogon City,12.98333,123.98333
 Soro-soro,14.32249,121.06486
 Sorosoro,13.8111,121.0925
 Sarongan,18.8549,121.4078
@@ -6683,7 +6681,7 @@ Sipalay River,9.7529,122.4018
 Sipalay Copper Mine,9.82222,122.48639
 Sipalay,9.75194,122.40417
 Sipalay Airport,9.78333,122.45
-City of Sipalay,9.75,122.5
+Sipalay City,9.75,122.5
 Sipaka River,6.44154,124.63539
 Sipaka Creek,6.3199,124.65408
 Sipak,12.96667,124.01667
@@ -8402,7 +8400,7 @@ Santiago,8.43778,124.99278
 Santiago,8.25,124.25
 Santiago,7.28889,126.57333
 Santiago,17.28333,120.46667
-City of Santiago,16.67847,121.55678
+Santiago City,16.67847,121.55678
 San Teodoro,13.43354,121.0144
 San Teodoro,13.3837,120.94386
 Santelmo,18.36667,121.63333
@@ -8480,7 +8478,7 @@ Santa Rosa,10.13333,124.83333
 Santa Rosa,8.61667,125.40806
 Santa Rosa Airfield,15.37965,120.63383
 Santa Rosa,15.45,121
-City of Santa Rosa,14.27297,121.09314
+Santa Rosa City,14.27297,121.09314
 Santa Rita Valley,14.85,120.3
 Santa Rita River,14.84639,120.28583
 Santa Rita Island,11.4292,124.9629
@@ -9943,7 +9941,7 @@ San Josef,15.34543,121.00967
 San Jose Este,17.18639,121.61333
 San Jose de Panangan,12.1108,124.8795
 San Jose de Oro,10.63389,119.85139
-San Jose del Monte,14.81389,121.04528
+San Jose del Monte City,14.81389,121.04528
 City of San Jose Del Monte,14.81667,121.11667
 San Jose de Bugnay,17.20861,120.50806
 San Jose Airfield,10.7678,121.9335
@@ -10601,8 +10599,8 @@ San Fernando,10.1624,123.7076
 San Fernando,9.83139,125.9775
 San Fernando,7.86639,125.23361
 San Fernando Airport,16.594,120.3033
-City of San Fernando,16.6,120.36667
-City of San Fernando,15.04574,120.70373
+San Fernando City,16.6,120.36667
+San Fernando City,15.04574,120.70373
 San Fernando,13.51667,123.1
 San Fernando,12.48333,123.71667
 San Fernando,12.38333,122.56667
@@ -13358,7 +13356,7 @@ Poting Bato,10.35437,123.7271
 Potibongan,11.50556,122.91333
 Potibacahoy,13.96989,120.83495
 Potia,16.85,121.48333
-Alfonso Lista (Potia),16.93333,121.46667
+Alfonso Lista,16.93333,121.46667
 Poti,10.74479,123.9748
 Poti,10.58333,123.98333
 Potat,10.3,123.88333
@@ -14995,7 +14993,7 @@ Pass Island,12,119.91667
 Pacis,17.8766,120.4822
 Passi,11.10778,122.64194
 Passi,10.71667,122.26667
-City of Passi,11.15,122.65
+Passi City,11.15,122.65
 Passage Reef,10.48333,119.08333
 Passage Point,10.87175,119.34906
 Passage Island Bay,10.8855,119.344
@@ -15102,7 +15100,7 @@ Pasbulbulu,15.1386,120.5308
 Pasbul,15.11667,120.51667
 Pasay River,13.95,122.55
 Pasay Point,13.9427,122.5551
-City of Pasay,14.55,121
+Pasay City,14.55,121
 Pasayan River,11.2875,122.5286
 Mount Pasayahon,11.26667,125.25
 Pasay,14.53748,121.00144
@@ -15275,7 +15273,7 @@ Parang,5.93672,120.92114
 Parangbasak,6.56528,122.17389
 Parañaque River,14.50236,120.98926
 Paranaque City,14.48156,121.01749
-City of Parañaque,14.5,120.98333
+Parañaque,14.5,120.98333
 Paranan River,17.90092,121.87058
 Paranan,17.98306,121.90778
 Paraluyunan,15.23626,120.62025
@@ -19552,7 +19550,7 @@ Muñoz Bay,11.3161,119.6727
 Muñoz East,17.15754,121.61354
 Muñoz,15.71611,120.90306
 Muñoz,7.82528,126.08861
-Science City of Muñoz,15.73333,120.88333
+Muñoz City,15.73333,120.88333
 Mount Munong,14.86028,121.31583
 Munting Kawayan,14.1482,121.4619
 Munic,15.71667,121.08333
@@ -20812,7 +20810,7 @@ Mati,7.7098,123.2953
 Mati,7.64462,124.06551
 Mati,6.95508,126.21655
 Mati Airport,6.95033,126.27252
-City of Mati,6.75381,126.24592
+Mati City,6.75381,126.24592
 Matho,9.16278,126.17722
 Mateuna,14.0243,121.6116
 Mount Mates,15.85,121.16667
@@ -21160,7 +21158,7 @@ Masbate Harbor,12.3678,123.6059
 Province of Masbate,12.16667,123.58333
 Masbate,12.37169,123.62494
 Masbate,12.20804,123.69861
-City of Masbate,12.33333,123.58333
+Masbate City,12.33333,123.58333
 Masbaranon River,11.7851,124.012
 Masbaranon,11.7803,124.0161
 Masayo River,10.5582,121.9605
@@ -21369,7 +21367,7 @@ Marikit,16.3,122.08333
 Marikit,15.8069,121.2504
 Marikit,15.65,120.76667
 Marikina River,14.55833,121.0675
-Marikina City,14.6481,121.1133
+Marikina,14.6481,121.1133
 City of Marikina,14.63333,121.1
 Tausan Mariki Channel,5.1928,120.2044
 Marikangkang,8.46667,126.21667
@@ -25110,7 +25108,7 @@ Mabalantak,12.09345,123.33341
 Mabalanoy,13.81787,121.38974
 Mabala Creek,7.83333,124.96667
 Mabalacat City,15.22303,120.57117
-Mabalacat City,15.21667,120.55
+Mabalacat,15.21667,120.55
 Mabakan River,14.18333,121.13333
 Mabaka,17.17504,121.37604
 Mount Mabajon,10.5998,124.7969
@@ -25170,7 +25168,7 @@ Maasin,9.29833,118.055
 Maasin,8.69583,125.47361
 Maasin,8.34889,124.34917
 Maasin,10.91667,122.38333
-City of Maasin,10.18616,124.85494
+Maasin City,10.18616,124.85494
 Maasim River,15.06089,120.81744
 Maasim River,13.197,120.6354
 Mount Maasim,11.34691,122.27341
@@ -26868,7 +26866,7 @@ Ligas Primero,14.44189,120.9711
 Ligar Point,13.03333,121.9
 Ligao,13.21697,123.51924
 Ligao,6.30056,124.13583
-City of Ligao,13.23333,123.55
+Ligao City,13.23333,123.55
 Ligam River,14.10666,121.79391
 Lifgong,11.1343,124.4684
 Liess Point,6.85471,123.95884
@@ -28891,7 +28889,7 @@ Koso,16.25,122.15
 Koronadal Valley,6.54833,124.85278
 Koronadal,6.50306,124.84694
 Koronadal,6.24501,124.98743
-City of Koronadal,6.49162,124.8884
+Koronadal City,6.49162,124.8884
 Coro,9.7887,123.5348
 Kopo,9.7459,125.433
 Kopia Island,7.2777,125.832
@@ -29188,7 +29186,7 @@ Kidkirana Mountain Range,11.35451,122.31031
 Kidbuaya,6.75583,125.28361
 Kidapong Range,6.32306,124.20222
 Kidapawan,7.00833,125.08944
-City of Kidapawan,7.03333,125.08333
+Kidapawan City,7.03333,125.08333
 Kidap,5.96667,124.7
 Kidanguin River,7.56667,124.85
 Kidampas,8.91556,124.84722
@@ -30323,7 +30321,7 @@ Kaban Mountain Range,7.90222,126.13667
 Kabankalan,12.3984,123.3691
 Kabankalan,9.9839,122.81423
 Kabankalan,9.98333,122.78333
-City of Kabankalan,9.88333,122.83333
+Kabankalan City,9.88333,122.83333
 Kabangbang,11.2019,123.721
 Kabangasan,8.94722,124.86222
 Mount Kabangahang,11.199,122.7845
@@ -30870,7 +30868,7 @@ Isabela,10.25,123.73333
 Isabela,10.2048,122.9888
 City of Isabela,6.70407,121.97117
 Isabela,10.18333,123.03333
-City of Isabela,6.69973,121.96781
+Isabela City,6.69973,121.96781
 Fort Isabel,6.70398,121.97113
 Isabel,10.9267,124.434
 Isabel,10.95,124.45
@@ -32057,7 +32055,7 @@ Himamylan Island,11.49417,123.17944
 Himamayo,13.26667,122.6
 Himamaylan River,10.0958,122.8671
 Himamaylan,10.09889,122.87056
-City of Himamaylan,10.06667,122.91667
+Himamaylan City,10.06667,122.91667
 Himamara,10.6455,124.9796
 Himamanay,11.422,123.068
 Himamaa,10.35047,124.86787
@@ -32849,7 +32847,7 @@ Guijob,10.03333,123.23333
 Guijalo Bay,13.729,123.8748
 Guijalo,13.7373,123.868
 Guihulñgan,10.1214,123.2742
-City of Guihulngan,10.18333,123.2
+Guihulngan City,10.18333,123.2
 Guihit Creek,8.24,126.04276
 Guihing Proper,6.68444,125.3525
 Guihian,8.40806,125.00944
@@ -33346,7 +33344,7 @@ General Tinio,15.65,120.76667
 General Tinio,15.35075,121.04773
 General Tinio (Papaya),15.35075,121.04773
 Terrero,16.9,120.4253
-General Santos City (Dadiangas),6.11667,125.16667
+General Santos City,6.11667,125.16667
 General Santos,6.11278,125.17167
 General Prim,16.8965,120.4454
 General Nakar,14.76365,121.63559
@@ -33551,7 +33549,7 @@ Gapas,5.69728,120.87549
 Gapang,17.4403,121.2581
 Gapang,17.391,120.5649
 Gapan,15.3072,120.9464
-City of Gapan,15.28333,120.98333
+Gapan City,15.28333,120.98333
 Mount Gap,6.87083,125.12167
 Gaus,10.19217,124.56385
 Gaa-oa,18.61745,120.86698
@@ -34071,7 +34069,7 @@ Estaca,9.73333,123.35
 Estaca,9.6933,124.2722
 Espital River,15.9204,119.8784
 Espiritu,17.9809,120.6569
-Banna (Espiritu),17.98333,120.65
+Banna,17.98333,120.65
 Espinosa,10.60346,122.5329
 Espina Point,7.9923,117.073
 Esperanza West,17.01897,121.6789
@@ -34136,7 +34134,7 @@ Escalantera,10.5685,122.038
 Escalante Harbor,10.83333,123.55
 Escalante Bay,10.8479,123.55
 Escalante,10.84028,123.49917
-City of Escalante,10.81667,123.5
+Escalante City,10.81667,123.5
 Escabrosa Point,10.07083,118.72694
 Esbeng,16.28333,120.63333
 Erong Bay,11.81667,124.81667
@@ -34175,7 +34173,7 @@ Enrique Villanueva,9.26667,123.63333
 Enriqueta,12.5301,124.399
 Enriqueta,10.23333,123.05
 Saravia,10.87754,122.9677
-Enrique B. Magalona (Saravia),10.83333,123.05
+Enrique B. Magalona,10.83333,123.05
 Enrile,17.5596,121.6974
 Enrile,17.56667,121.66667
 Enoruan Island,11.27419,125.06033
@@ -34229,7 +34227,7 @@ Emmanuel,13.8866,121.0515
 Eman Point,14.6374,120.302
 Hacienda Ema,10.1736,122.9741
 El Salvador,8.56306,124.5225
-City of El Salvador,8.51362,124.49915
+El Salvador City,8.51362,124.49915
 El Pardo,9.66,123.4944
 Elonbachid Island,12.61667,124.36667
 Elnonok,6.20639,125.12667
@@ -35091,7 +35089,7 @@ Dinaig Island,7.19222,124.18306
 Dinaigan,9.75,123.13333
 Dinaigol,6.54604,124.66899
 Dinaig,7.02556,124.315
-Datu Odin Sinsuat (Dinaig),7.08333,124.26667
+Datu Odin Sinsuat,7.08333,124.26667
 Dinahican,14.71667,121.71667
 Dinahican,14.69337,121.71917
 Dinaguitan,9.1481,123.5308
@@ -35264,7 +35262,7 @@ Digos Point,6.75583,125.39056
 Digos Outer Reef,6.73139,125.40028
 Digos Islet,6.73972,125.38778
 Digos,6.74972,125.35722
-City of Digos,6.83333,125.35
+Digos City,6.83333,125.35
 Digollorin River,16.83505,122.43224
 Digollorin Point,16.88833,122.46222
 Digollorin Bay,16.82558,122.43394
@@ -38018,7 +38016,7 @@ Cauayan,12.468,123.6908
 Cawayan,12.3962,123.586
 Cauayan,9.9718,122.6249
 Cauayan,16.93333,121.75
-City of Cauayan,16.9,121.8
+Cauayan City,16.9,121.8
 Cauayan,9.9,122.55
 Caua River,13.76667,122.53333
 Caua Point,12.3518,124.0627
@@ -38188,7 +38186,7 @@ Catbangen,16.61667,120.31667
 Catbalogan River,11.78333,124.88333
 Catbalogan Harbor,11.78333,124.86667
 Catbalogan,11.77528,124.88611
-City of Catbalogan,11.85,124.91667
+Catbalogan City,11.85,124.91667
 Catayungan,12.20286,121.10051
 Catayom,11.09167,124.54778
 Catayom,11.06972,124.59333
@@ -39509,7 +39507,7 @@ Candongos Reef,11.8,124.81667
 Candonaya,10.9328,124.7076
 Candon Anchorage,17.20425,120.41029
 Candon,17.19472,120.45167
-City of Candon,17.2,120.45
+Candon City,17.2,120.45
 Candomaay,12.6102,124.0937
 Candulo Island,10.9247,125.8369
 Candol Point,6.25222,125.68417
@@ -40400,7 +40398,7 @@ Calo River,14.1943,121.2686
 Calo River,9.3861,123.2591
 Calopaan,16.06667,120.73333
 Coloocan River,14.08664,120.97416
-City of Caloocan,14.65,120.96667
+Kalookan City,14.65,120.96667
 Caloocan Norte,16.03863,120.28508
 Caloocan City,14.64953,120.96788
 Caloocan,14.09139,120.97694
@@ -40808,7 +40806,7 @@ Lake Calapan,13.4,121.2
 Calapan,15.7078,120.547
 Calapan,13.4117,121.1803
 Calapan,13.41667,121.2
-City of Calapan,13.35,121.16667
+Calapan City,13.35,121.16667
 Calapacuan Point,14.86229,120.23573
 Calapacuan,14.86119,120.24173
 Calapachian River,10.84803,119.28313
@@ -41318,7 +41316,7 @@ Cagayan Islands,9.66667,121.26667
 Cagayan Island,9.5999,121.2201
 Cagayan,6.9747,118.5144
 Municipality of Mapun,7.01667,118.46667
-Cagayan de Oro,8.48222,124.64722
+Cagayan de Oro City,8.48222,124.64722
 Lumbia Airport,8.41375,124.61075
 Cagayancillo,9.57694,121.20722
 Cagayancillo,9.59584,121.21096
@@ -42263,7 +42261,7 @@ Cabadiancan Point,11.69778,124.71278
 Cabadea Point,13.2244,123.8723
 Cabadbaran River,9.12155,125.52408
 Cabadbaran,9.12261,125.53549
-City of Cabadbaran,9.13748,125.65543
+Cabadbaran City,9.13748,125.65543
 Cabad,9.74875,123.92876
 Cabacungan River,10.2868,123.1225
 Cabacungan Point,9.85972,123.76389
@@ -43974,7 +43972,7 @@ Broughton Point,10.56722,119.19917
 Brother Island,10.8325,119.443
 Brother Island,11.40139,119.51417
 Brookes Point,8.77201,117.8371
-Brooke'S Point,8.85077,117.81615
+Brooke's Point,8.85077,117.81615
 Broken Head Rock,10.11667,118.8
 Broken Head,10.11667,118.8
 Brocen Island,5.78333,119.71667
@@ -44103,7 +44101,7 @@ Borongborogñan,13.6,123.16667
 Borongan River,11.62222,125.44306
 Port Borongan,11.61667,125.46667
 Borongan,11.60806,125.43194
-City of Borongan,11.59825,125.35869
+Borongan City,11.59825,125.35869
 Borong,6.28333,124.13333
 Boronayon,6.20169,124.20477
 Burol Segundo,14.83997,120.90568
@@ -44639,7 +44637,7 @@ Bogo,11.0517,124.0055
 Bogo,10.13333,124.16667
 Bogo,9.85686,123.56417
 Bogo,9.228,123.6677
-City of Bogo,11.02886,123.99838
+Bogo City,11.02886,123.99838
 Bognuyan,13.29577,121.86085
 Bognog,12.6675,123.93111
 Bognao Inlet,12.2,121.01667
@@ -44967,7 +44965,7 @@ Bislig,11.28333,124.66667
 Bislig,11.0725,125.03361
 Bislig,8.21528,126.31639
 Bislig Airport,8.19781,126.32458
-City of Bislig,8.20996,126.30947
+Bislig City,8.20996,126.30947
 Bislian Malaki Creek,14.6422,121.96873
 Bislian Point,14.64234,121.97368
 Bislian Malaki,14.64321,121.9664
@@ -45870,7 +45868,7 @@ Bayugan River,8.70222,125.70611
 Bayugan,10.6295,124.9605
 Bayugan,10.6,125.08333
 Bayugan,8.75611,125.7675
-City of Bayugan,8.78564,125.78175
+Bayugan City,8.78564,125.78175
 Bayog Hill,5.96889,121.08417
 Bayug,16.98955,121.88974
 Bayug,16.6681,121.5124
@@ -45983,12 +45981,12 @@ Baybay,11.7163,122.0942
 Baybay,11.60694,122.74278
 Baybay,11.07611,124.87528
 Baybay,10.6785,124.8006
-City of Baybay,10.68333,124.83333
+Baybay City,10.68333,124.83333
 Baybagun Cove,9.73333,125.95
 Bayawas,12.95417,123.61444
 Bayawan River,9.36306,122.79361
 Bayawan,9.3649,122.804
-City of Bayawan (Tulong),9.5,122.8
+Bayawan City,9.5,122.8
 Bayahawan,9.7274,124.05118
 Bayawa,6.69174,124.76557
 Bayausen,17.28333,120.68333
@@ -48668,7 +48666,7 @@ Balanga,14.67611,120.53611
 Balanga,13.9,120.86667
 Balanga,13.8055,121.141
 Balanga,11.8937,119.9352
-City of Balanga,14.66695,120.4943
+Balanga City,14.66695,120.4943
 Balandra River,11,122.83333
 Balanban Point,9.6586,122.4422
 Balanban Creek,10.5,123.7
@@ -50645,7 +50643,7 @@ Antipolo,9.81444,126.01361
 Antipolo,9.6425,124.2996
 Antipolo,8.77722,126.27861
 Antipolo,8.15,125.81667
-City of Antipolo,14.62245,121.1253
+Antipolo City,14.62245,121.1253
 Antipas River,15.5205,121.2717
 Anti Mabalacat,15.41667,119.9
 Antilao River,11,124.6
@@ -51805,7 +51803,7 @@ Alaminos River,16.19335,119.96442
 Alaminos,16.15611,119.98111
 Alaminos,14.06391,121.24649
 Alaminos,11.5513,122.2727
-City of Alaminos,16.15,119.96667
+Alaminos City,16.15,119.96667
 Alaminos,14.09426,121.26977
 Alambre,7.06417,125.46861
 Lambigue River,9.5999,125.6854
@@ -67428,7 +67426,7 @@ Alitap,14.117,121.744
 Santa Lucia,14.1056,121.7445
 Rosario,14.085,121.7481
 Valencia,14.065,121.6537
-"Mainit, Tayabas City",14.06378,121.63299
+Tayabas City,14.06378,121.63299
 Ilayang Palsabangon,14.0108,121.7383
 Bagumbungan,14.024,121.7068
 Ibabang Bagumbungan,14.0045,121.6959
@@ -71837,7 +71835,7 @@ Mount Halcon,14.17151,121.2408
 Bulusan Street,14.17008,121.24105
 Banahaw Street,14.17022,121.24311
 Francisco O. Santos Street,14.16984,121.24385
-Mount Taal,14.17384,121.23937
+Taal lake,14.17384,121.23937
 Emerald Street,14.17364,121.2423
 Jade Street,14.1726,121.2424
 Diamond Street,14.17148,121.24263
@@ -93867,3 +93865,20 @@ Port of Ozamis,8.13884,123.84546
 Port of Basilan,6.71004,121.97373
 Hilton Clark Sun Valley Resort,15.1786,120.50835
 Palamahawan sa Kubo ni Nanay Phine,11.60838,122.71387
+Malaybalay City,8.1479,125.1321
+Valencia City,7.8632,125.1709
+Malolos City,14.8527,120.8160
+Meycauayan City,14.7499,120.9739
+Cordoba,10.2439,123.9416
+Talisay City,10.2524,123.8392
+Laak,7.8771,125.7844
+Tagum City,7.4472,125.8093
+Panabo City,7.3087,125.6841
+Samal City,7.1033,125.7188
+Duenas,11.0672,122.5938
+Laguna lake,14.3935,121.1939
+Lanao Lake,7.8931,24.2644
+Ozamis City,8.1624,123.7741
+Sipalay City,9.7198,122.4920
+Tanjay City,9.4958,122.9663
+Pozzorubio,16.1164,120.5431

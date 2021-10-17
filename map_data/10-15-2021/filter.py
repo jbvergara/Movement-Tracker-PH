@@ -31,6 +31,7 @@ def merge_longlat(filename):
         fb_table = csv.DictReader(fb_data_file, fieldnames = fb_fieldnames)
         listoflists = []
         buff_place = ''
+        buff_missing = []
         
         for fb_row in fb_table:
             buff = []
@@ -40,6 +41,8 @@ def merge_longlat(filename):
                     
             if(fb_place != buff_place):
                 [latitude, longitude] = search_longlat(fb_place)
+                if(latitude=='' and longitude==''):
+                    buff_missing.append([fb_place])
                 buff.append(latitude)
                 buff.append(longitude)
                 buff_place = fb_place
@@ -52,9 +55,15 @@ def merge_longlat(filename):
 
     with open('merged_data.csv', 'w') as gen_csv:
         writer = csv.writer(gen_csv)
-        writer.writerow(fb_fieldnames)
+        writer.writerow(fb_fieldnames + ['latitude', 'longitude'])
         for item in listoflists:
             writer.writerow(item)
+    
+    with open('missing_place.csv', 'w') as gen_csv:
+        writer = csv.writer(gen_csv)
+        for item in buff_missing:
+            writer.writerow(item)
+            print("MISSING:",item)
             
 def search_longlat(place_name):
     with open('PH_long_lat_filtered.csv', 'r', newline='') as long_lat_file:
@@ -90,7 +99,7 @@ def clean_data(filename):
     
     with open('clean_merged_data.csv', 'w') as gen_csv:
         writer = csv.writer(gen_csv)
-        writer.writerow(fieldnames)
+        writer.writerow(['epoch'] + fieldnames)
         for item in listoflists:
             writer.writerow(item)
 
