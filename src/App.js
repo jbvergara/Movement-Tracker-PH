@@ -156,7 +156,7 @@ export default function App() {
           // set the `urls` property to the URL of the FeatureLayer so that this
           // interceptor only applies to requests made to the FeatureLayer URL
           urls: ["https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/PHL_Boundaries_2020/FeatureServer/3",
-          "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/mv_ph10152021/FeatureServer/0"],
+          "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/10192021_layer/FeatureServer/0"],
           // use the BeforeInterceptorCallback to add token to query
           before: function setToken(params) {
             params.requestOptions.query = params.requestOptions.query || {};
@@ -223,7 +223,7 @@ export default function App() {
         });
 
         const data_layer = new FeatureLayer({
-          url: "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/mv_ph10152021/FeatureServer/0",
+          url: "https://services3.arcgis.com/RIea9L4JuvuT5SES/arcgis/rest/services/10192021_layer/FeatureServer/0",
           apiKey: process.env.REACT_APP_ARCGIS_APP_API_KEY,
           title: "PH Movement Data",
           outFields: ["all_day_ratio_single_tile_users", "epoch"],
@@ -273,8 +273,8 @@ export default function App() {
         timeSlider.watch("timeExtent", () => {
           //filter later to show data less than the end of time slider
           data_layer.definitionExpression =
-                "epoch BETWEEN " +  (timeSlider.timeExtent.start.getTime() + 28800000) + " AND " + (timeSlider.timeExtent.start.getTime() + 28800000 + 86400000);
-              //"epoch = " +  (timeSlider.timeExtent.start.getTime() + 28800000);
+              //  "epoch BETWEEN " +  (timeSlider.timeExtent.start.getTime() + 28800000) + " AND " + (timeSlider.timeExtent.start.getTime() + 28800000 + 86400000);
+              "epoch = " +  (timeSlider.timeExtent.start.getTime() + 28800000);
 
           // now gray out data that happened before the time slider's current
           layerView.effect = {
