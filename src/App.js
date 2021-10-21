@@ -340,9 +340,6 @@ export default function App() {
           </div>
           <div id="viewDiv" className="w-screen h-screen"></div>
           <div id="timeSlider"></div>
-          <div id="infoDiv" className="esri-widget">
-            <div> <b>Movement Data Philippines</b></div><br/>
-          </div>
         </nav>
       </div>
       
